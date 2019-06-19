@@ -137,4 +137,3 @@ Tokio Marchen
 主要登場人物のアクションを時系列で整理した資料『<a href="./pdf/ActChronologicalOrder.pdf">ActChronologicalOrder.pdf</a>』を用意した。<br>
 前日譚や大まかな流れを確認する際は、この資料を参考にすること。
 
-<br>『TokioMarchen』というゲームの企画です。
