@@ -1,0 +1,58 @@
+@startuml
+left to right direction
+state "ニュートラル状態" as Neutral
+[*] --> Neutral
+
+/'アイテム選択画面での操作'/
+Neutral --> ItemSelect : L1押下
+state "アイテムセレクト状態" as ItemSelect{
+}
+ItemSelect --> Neutral : L1離す
+
+Neutral --> Pause : OPTIONボタン押下
+state "ポーズ" as Pause
+Pause --> Neutral : OPTIONボタン押下
+
+/'キャラクター操作'/
+Neutral --> Action
+state "アクション状態" as Action{
+	state "銃構え状態" as Attack{
+		state "射撃状態" as Shoot
+		[*] --> Shoot : R2押下/射撃
+		Shoot --> [*] : R2離すor一定時間後
+	}
+	[*] --> Attack : L2押下
+	Attack --> [*] : L2離すor■ボタン押下(リロード)
+	--
+	state "移動状態" as Move{
+		state "走り移動" as RunMove
+		[*] --> RunMove : L3押下
+		RunMove --> [*] : L3離す
+	}
+	[*] --> Move : 左スティック押下
+	Move --> [*] : 左スティック離す
+	--
+	state "視点移動状態" as View
+	[*] --> View : 右スティック押下
+	View --> [*] : 右スティック離す
+	--
+	state "しゃがみ状態" as Squat
+	[*] --> Squat : xボタン押下
+	Squat --> [*] : xボタン押下
+	--
+	state "リロード状態" as Reload
+	[*] --> Reload : ■ボタン押下[射撃状態以外の時]
+	Reload --> [*] : 一定時間経過
+	--
+	state "ステルス状態" as Stealth
+	[*] --> Stealth : ◯ボタン押下[銃構え状態以外の時]
+	Stealth --> [*] : ◯ボタン押下
+	--
+	state "クイックアイテム選択状態" as QuickItemSelect
+	[*] --> QuickItemSelect : 十字キー押下[銃構え状態以外の時]
+	QuickItemSelect --> [*] : 十字キー離す
+}
+
+Action --> Neutral
+
+@enduml
