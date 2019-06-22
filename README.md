@@ -29,6 +29,7 @@
 
 
 <img src="https://www.oist.jp/sites/default/files/styles/short_cropped_page_header/public/Pungor_2_hpi_1.jpg?itok=2OIFcx0W">
+画像参照:<a href="https://www.oist.jp/ja/news-center/press-releases/20839">タコのゲノムを解読する</a>
 
 <br>
 
